@@ -43,7 +43,29 @@
   </div>
 </nav>
 
-<%= yield %>
+<div class="container">
+  <div class="row main-header-row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 main-header-div">
+      <%= image_tag 'http://placehold.it/100x100', :class => 'main-profile-img' %>
+    </div> <!-- main-header-div -->
+    <div class="col-sm-2"></div>
+  </div> <!--main-header-row" -->
+
+  <div class="row top-body-row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 top-body-div">
+      
+	
+	<%= yield %>
+
+
+      
+    </div> <!-- top-body-div -->
+    <div class"col-sm-2"></div>
+  </div> <!-- top-body-row -->
+
+</div> <!-- container -->
 
 </body>
 </html>
