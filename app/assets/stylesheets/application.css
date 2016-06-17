@@ -32,6 +32,8 @@ body {
 .top-body-div {
     background-color: #FFF;
     padding-top: 35px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .main-profile-img {
