@@ -29,7 +29,19 @@
 	<li><a href="#">My Page</a></li>
 		          
       </ul>
-	    
+
+      <% if user_signed_in? %>
+      
+      <div class="col-sm-4 navbar-right">
+	<p class="navbar-text">
+	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	</p>
+	<p class="navbar-text">
+	  Signed in as <%= current_user.email %>
+	</p>
+      </div>
+  
+      <% else %>
       <form class="navbar-form navbar-right">
 	<div class="form-group">
 	  <input type="text" class="form-control" placeholder="email">
@@ -40,12 +52,13 @@
 	<button type="submit" class="btn btn-default">Login</button>
 
 	<div class="form-group">
-	<p class="navbar-text">
-	  <%= link_to "Sign up", new_user_registration_path, :class => "navbar-link" %>
-	</p>
+	  <p class="navbar-text">
+	    <%= link_to "Sign up", new_user_registration_path, :class => "navbar-link" %>
+	  </p>
 	</div> <!-- col-sm-1 -->
 
       </form>
+      <% end %>
     </div>
   </div>
 </nav>
