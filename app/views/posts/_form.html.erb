@@ -1,5 +1,14 @@
 <%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
+  <% if flash[:errors] %>
+    <div class="alert alert-warning">
+      <% flash[:errors].each do |key, value| %>
+        <% value = value[0] %>
+        <li><%= "#{key} #{value}" %></li>
+      <% end %>
+      
+    </div> <!-- alert alert-warning -->
+  <% end %>
+<!--  <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
@@ -10,7 +19,7 @@
       </ul>
     </div>
   <% end %>
-
+-->
   <textarea name="body" class="form-control" rows="3" placeholder="What are you up to?"></textarea>
 
   <div class="actions">

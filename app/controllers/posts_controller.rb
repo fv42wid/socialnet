@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.last(5).reverse
-    @post = Post.new
+    @post = params[:post] || Post.new
   end
 
   # GET /posts/1
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { redirect_to posts_path }
+        format.html { redirect_to posts_path, flash: {errors: @post.errors} }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
