@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts
   devise_for :users
+  resources :users, :only => [:show]
 
   root :to => redirect('/posts')
   # The priority is based upon order of creation: first created -> highest priority.
