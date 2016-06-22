@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622192207) do
+ActiveRecord::Schema.define(version: 20160622195206) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20160622192207) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.integer  "recipient_id",     limit: 4
-    t.integer  "actor_id",         limit: 4
+    t.integer  "recipient_id",    limit: 4
+    t.integer  "actor_id",        limit: 4
     t.datetime "read_at"
-    t.string   "action",           limit: 255
-    t.integer  "notifiable_id",    limit: 4
-    t.string   "notifieable_type", limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.string   "action",          limit: 255
+    t.integer  "notifiable_id",   limit: 4
+    t.string   "notifiable_type", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "posts", force: :cascade do |t|

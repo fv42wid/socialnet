@@ -28,6 +28,10 @@ class FriendshipsController < ApplicationController
 
     respond_to do |format|
       if @friendship.save
+
+        #create notification
+        Notification.create(recipient: User.find(@friendship.friend_id), actor_id: @friendship.user_id, action: "friended", notifiable: @friendship)
+
         format.html { redirect_to posts_path, notice: 'Friendship was successfully created.' }
         format.json { render :show, status: :created, location: @friendship }
       else
