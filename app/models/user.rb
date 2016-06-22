@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, :dependent => :destroy
   has_many :friendships
+  has_many :notifications, foreign_key: :recipient_id
 end
