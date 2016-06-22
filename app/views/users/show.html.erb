@@ -9,6 +9,6 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <%= link_to '<span class="glyphicon glyphicon-plus"></span>Friend'.html_safe, friendships_path , :class => "btn btn-success btn-sm" %>
+    <%= link_to '<span class="glyphicon glyphicon-plus"></span>Friend'.html_safe, friendships_path(@user), :class => "btn btn-success btn-sm", :method => :post %>
   </div> <!-- col-sm-4 -->
 </div> <!-- row -->
