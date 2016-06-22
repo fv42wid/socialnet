@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friendships
   get 'users/show'
 
   resources :posts
