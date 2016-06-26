@@ -31,18 +31,49 @@
       </ul>
 
       <% if user_signed_in? %>
-      
-      <div class="col-sm-4 navbar-right">
-	<p class="navbar-text">
-	  <span class="glyphicon glyphicon-bell"></span>
-	</p>
-	<p class="navbar-text">
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-	</p>
-	<p class="navbar-text">
-	  Signed in as <%= current_user.email %>
-	</p>
-      </div>
+<!--
+        <ul class="nav navbar-nav navbar-right">
+	  <li>
+	    <span class="navbar-text">
+	      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	    </span>
+	  </li>
+	  <li>
+	    <span class="navbar_text">
+	      Signed in as <%= current_user.email %>
+	    </span>
+	  </li>
+	</ul>-->
+
+      <ul class="nav navbar-nav navbar-right">
+	<li data-behavior="notifications">
+	  <div class="dropdown">
+
+	    <a class="navbar-link dropdown-toggle" href="#" id="dropdownMenu1" data-toggle="dropdown" data-behavior="notification-link" aria-haspopup="true" aria-expanded="true">
+	      <span class="navbar-text">
+		<span class="glyphicon glyphicon-bell"></span>
+		<span data-behavior="unread-count"></span>
+		<span class="caret"></span>
+	      </span>
+	    </a>
+
+	    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
+	      <!--<li><a href="#">Action</a></li>
+	      <li><a href="#">Action</a></li>-->
+	    </ul>
+	  </div>
+	</li>
+	<li>
+	  <span class="navbar-text">
+	    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	  </span>
+	</li>
+	<li>
+	  <span class="navbar-text">
+	    Signed in as <%= current_user.email %>
+	  </span>
+	</li>
+      </ul>
   
       <% else %>
       <%= form_for("user", url: user_session_path, :html => {:class => 'navbar-form navbar-right main-login-form'}) do |f| %>
@@ -56,13 +87,14 @@
 	  <%= f.password_field :password, autocomplete: 'off', :class => 'form-control', :placeholder => 'password' %>
 	</div>
 	<button type="submit" class="btn btn-default">Login</button>
-
+	
 	<div class="form-group">
-	  <p class="navbar-text">
+	  <span class="navbar-text">
 	    <%= link_to "Sign up", new_user_registration_path, :class => "navbar-link" %>
-	  </p>
+	  </span>
 	</div> <!-- col-sm-1 -->
-
+	
+	
       <% end %>
       <!--</form>-->
       <% end %>
