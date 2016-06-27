@@ -47,21 +47,22 @@
 
       <ul class="nav navbar-nav navbar-right">
 	<li data-behavior="notifications">
+	  <span class="navbar-text notification-span">
 	  <div class="dropdown">
-
-	    <a class="navbar-link dropdown-toggle" href="#" id="dropdownMenu1" data-toggle="dropdown" data-behavior="notification-link" aria-haspopup="true" aria-expanded="true">
-	      <span class="navbar-text">
+	    
+	    <button class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" data-behavior="notification-link" aria-haspopup="true" aria-expanded="true">
 		<span class="glyphicon glyphicon-bell"></span>
 		<span data-behavior="unread-count"></span>
 		<span class="caret"></span>
-	      </span>
-	    </a>
-
+	    </button>
+	    
 	    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
 	      <!--<li><a href="#">Action</a></li>
 	      <li><a href="#">Action</a></li>-->
 	    </ul>
+	    
 	  </div>
+	  </span>
 	</li>
 	<li>
 	  <span class="navbar-text">
