@@ -1,6 +1,7 @@
 class Notifications
   constructor: ->
     @notifications = $("[data-behavior='notifications']")
+    @notification_count = $("[data-behavior='notification_count']")
     @setup() if @notifications.length > 0
 
   setup: ->
@@ -22,11 +23,13 @@ class Notifications
     )
 
   handleSuccess: (data) =>
-    console.log(data)
-    items = $.map data, (notification) ->
+    #console.log(data.notification_count)
+    #console.log(data.notifications["arry!"])
+  
+    items = $.map data.notifications["arry!"], (notification) ->
       "<li><a class='dropdown-item' href='#{notification.url}'>#{notification.actor.email} #{notification.action} #{notification.notifiable.type}</a></li>"
-    
-    $("[data-behavior='unread-count']").text(items.length)
+
+    $("[data-behavior='unread-count']").text(data.notification_count)
     $("[data-behavior='notification-items']").html(items)
   
 jQuery ->
