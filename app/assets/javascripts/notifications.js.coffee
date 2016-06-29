@@ -27,7 +27,7 @@ class Notifications
     #console.log(data.notifications["arry!"])
   
     items = $.map data.notifications["arry!"], (notification) ->
-      "<li><a class='dropdown-item' href='#{notification.url}'>#{notification.actor.email} #{notification.action} #{notification.notifiable.type}</a></li>"
+      "<li><a class='dropdown-item' href='#{notification.url}'>#{notification.actor.email} #{notification.action} #{notification.notifiable.type}</a></li><button class='btn btn-success btn-xs'>Accept</button><button class='btn btn-danger btn-xs'>Deny</button>"
 
     $("[data-behavior='unread-count']").text(data.notification_count)
     $("[data-behavior='notification-items']").html(items)
