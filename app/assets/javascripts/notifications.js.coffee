@@ -14,6 +14,7 @@ class Notifications
     )
 
   handleClick: (e) =>
+    #console.log(e)
     $.ajax(
       url: "/notifications/mark_as_read"
       method: "POST"
