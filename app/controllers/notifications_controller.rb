@@ -12,4 +12,9 @@ class NotificationsController < ApplicationController
     render json: {success: true}
   end
 
+#  def show
+#    @notifications = Notification.where(recipient: current_user, read_at: nil)
+#    #format.js { render :partial => "_show.html.erb" }
+#  end
+
 end

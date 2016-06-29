@@ -1,0 +1,3 @@
+<% @notifications.each do |notification| %>
+  <li><a href="#" class="dropdown-item"><%= notification.actor.email %> <%= notification.action %> a <%= notification.notifiable_type %></a><%= form_for(notification.notifiable, :html => {:class=> "form-inline"}) do |f| %><%= f.hidden_field :approved, value: "TRUE" %><button type="submit" class="btn btn-success btn-xs">Accept</button><% end %><%= form_for(notification.notifiable) do |g| %><%= g.hidden_field :approved, value: "FALSE" %><button type="submit" class="btn btn-danger btn-xs">Deny</button><% end %></li>
+<% end %>
