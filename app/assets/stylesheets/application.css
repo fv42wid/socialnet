@@ -72,3 +72,7 @@ body {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+form.notification-approval-form {
+    display: inline-block;
+}
