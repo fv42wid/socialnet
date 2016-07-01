@@ -9,12 +9,14 @@
 
 <div class="row">
   <div class="col-sm-4">
+    <% if user_signed_in? %>
     <%= form_for(@friendship) do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :friend_id, :value => @user.id %>
       <%= f.hidden_field :approved, :value => false %>
       <button type="submit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span>Friend</button>
     <% end %>
-    <!-- <%= link_to '<span class="glyphicon glyphicon-plus"></span>Friend'.html_safe, friendships_path(current_user.id, @user.id, 0), :class => "btn btn-success btn-sm", :method => :post %> -->
+    <% end %>
+    
   </div> <!-- col-sm-4 -->
 </div> <!-- row -->

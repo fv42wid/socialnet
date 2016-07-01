@@ -119,10 +119,11 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8 top-body-div">
       
-	
+      <% if user_signed_in? or request.path == '/users/sign_up' or request.path == '/users/sign_in' %>
 	<%= yield %>
-
-
+      <% else %>
+        <%= render "layouts/no_user" %>
+      <% end %>
       
     </div> <!-- top-body-div -->
     <div class"col-sm-2"></div>
