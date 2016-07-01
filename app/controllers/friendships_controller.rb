@@ -46,7 +46,7 @@ class FriendshipsController < ApplicationController
   def update
     respond_to do |format|
       if @friendship.update(friendship_params)
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully updated.' }
+        format.html { redirect_to user_path(User.find(@friendship.user_id), notice: 'Friendship was successfully updated.' }
         format.json { render :show, status: :ok, location: @friendship }
       else
         format.html { render :edit }
