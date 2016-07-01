@@ -52,15 +52,17 @@
 	    
 	    <button class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" data-behavior="notification-link" aria-haspopup="true" aria-expanded="true">
 		<span class="glyphicon glyphicon-bell"></span>
-		<span class="badge"data-behavior="unread-count"></span>
+		<span class="badge"data-behavior="unread-count"><%= @notification_count %></span>
 		<span class="caret"></span>
 	    </button>
 	    
-	    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">
-	      <%= render "notifications/list_notifications" %>
-	      <!--<li><a href="#">Action</a></li>
-	      <li><a href="#">Action</a></li>-->
-	    </ul>
+	    <% if @notifications.count > 0 %>
+	      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-behavior="notification-items">	      
+		<%= render "notifications/list_notifications" %>
+		<!--<li><a href="#">Action</a></li>
+		<li><a href="#">Action</a></li>-->
+	      </ul>
+	    <% end %>
 	    
 	  </div>
 	  </span>
