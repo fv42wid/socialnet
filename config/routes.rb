@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :friendships
   get 'users/show'
 
-  resources :posts
+  resources :posts do
+    resource :like, module: :posts
+  end
+
   devise_for :users
   resources :users, :only => [:show]
   

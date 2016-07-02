@@ -1,0 +1,7 @@
+<p class="text-muted">
+  <% if user_signed_in?  && current_user.likes?(post) %>
+    <%= link_to "Unlike", post_like_path(post), method: :delete %>
+  <% else %>
+    <%= link_to "Like", post_like_path(post), method: :post %>
+  <% end %>
+</p>
