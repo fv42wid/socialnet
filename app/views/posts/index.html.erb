@@ -38,7 +38,7 @@
 	  <div class="media-body">
 	    <h5 class="media-heading"><%= post.user.email %></h5>
 	    <p><%= post.body %></p>
-	    <div id="likes">
+	    <div id="post_<%= post.id %>_likes">
 	      <%= render partial: "likes", locals: {post: post} %>
 	    </div>
 	  </div> <!-- media-body -->
