@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :notifications, foreign_key: :recipient_id
   has_many :likes
+  has_many :events
 
   def likes?(post)
     post.likes.where(user_id: id).any?

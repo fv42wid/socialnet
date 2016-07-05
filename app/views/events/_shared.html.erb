@@ -1,0 +1,9 @@
+<li class="media">
+  <div class="media-left">
+    <%= image_tag 'http://placehold.it/60x60', :class => "media-object" %>
+  </div>
+  <div class="media-body">
+    <h5><%= event.user.email %></h5>
+    <p><%= "#{event.action} a #{event.eventable_type}" %></p>
+  </div>
+</li>

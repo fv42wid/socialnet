@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Events</h1>
-
+<!--
 <table>
   <thead>
     <tr>
@@ -31,3 +31,9 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+-->
+<ul class="media-list">
+<% @events.each do |event| %>
+  <%= render partial: event.action, locals: {event: event} %>
+<% end %>
+</ul>

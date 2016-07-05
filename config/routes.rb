@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resource :like, module: :posts
+    member do
+      post :share
+    end
   end
 
   devise_for :users
