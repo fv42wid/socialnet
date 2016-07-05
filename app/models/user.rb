@@ -12,5 +12,9 @@ class User < ActiveRecord::Base
   def likes?(post)
     post.likes.where(user_id: id).any?
   end
+
+  def friends
+    Friendship.where("user_id='#{id}' OR friend_id='#{id}' AND approved=true")
+  end
   
 end
