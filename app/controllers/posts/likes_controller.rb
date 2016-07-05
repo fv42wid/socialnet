@@ -4,6 +4,7 @@ class Posts::LikesController < ApplicationController
 
   def create
     @post.likes.where(user_id: current_user.id).first_or_create
+    current_user.events.create(action: "liked", eventable: @post)
     
     respond_to do |format|
       format.html { redirect_to posts_path }
