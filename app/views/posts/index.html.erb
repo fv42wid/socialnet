@@ -40,7 +40,6 @@
 	    <p><%= post.body %></p>
 	    <div id="post_<%= post.id %>_likes">
 	      <%= render partial: "likes", locals: {post: post} %>
-	      <%= link_to 'Share', share_post_path(post), method: :post %>
 	    </div>
 	  </div> <!-- media-body -->
 	</li>
