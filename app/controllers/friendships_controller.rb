@@ -47,6 +47,10 @@ class FriendshipsController < ApplicationController
     # mark the notification as read as well here
     respond_to do |format|
       if @friendship.update(friendship_params)
+        if @friendship.approved == true
+          @recip_friendship = Friendship.new(user_id: current_user.id, friend_id: @friendship.user_id, approved: true)
+          @recip_friendship.save
+        end
         format.html { redirect_to user_path(User.find(@friendship.user_id)), notice: 'Friendship was successfully updated.' }
         format.json { render :show, status: :ok, location: @friendship }
       else
