@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   end
 
   def friends
-    Friendship.where("user_id='#{id}' OR friend_id='#{id}' AND approved=true")
+    User.where(id: self.friendships.select("friend_id"))
   end
   
 end
