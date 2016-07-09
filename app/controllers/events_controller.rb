@@ -4,8 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where(user: current_user.friends)
-    @post = Post.new
+    if user_signed_in?
+      @events = Event.where(user: current_user.friends)
+      @post = Post.new
+    end
+    
   end
 
   # GET /events/1
