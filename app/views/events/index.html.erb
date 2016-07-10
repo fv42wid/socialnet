@@ -15,7 +15,7 @@
     <ul class="media-list">
       <% @events.each do |event| %>
         <%= render partial: "#{event.action}_#{event.eventable_type.downcase}", locals: {event: event} %>
-	<%= render partial: 'posts/likes', locals: {post: event.eventable} %>
+	
       <% end %>
     </ul>
   </div> <!-- col-sm-9 -->
