@@ -1,9 +1,14 @@
 <li class="media">
+  <h5><%= event.user.email %> <small> liked this</small></h5>
   <div class="media-left">
-    <%= image_tag 'http://placehold.it/60x60', :class => "media-object" %>
+    <%= image_tag 'http://placehold.it/50x50', :class => "media-object" %>
   </div>
   <div class="media-body">
-    <h5><%= event.user.email %></h5>
-    <p>liked a post</p>
+    <h5 class="post-name-heading"><%= event.user.email %></h5>
+    <p class="text-muted post-time-ago"><small><%= time_ago_in_words(event.updated_at) %></small></p>
+    <p><%= event.eventable.body %></p>
+    <div id="post_<%= event.eventable_id %>_likes">
+      <%= render partial: 'posts/likes', locals: {post: event.eventable} %>
+    </div>
   </div>
 </li>
