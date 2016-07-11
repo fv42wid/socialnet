@@ -15,3 +15,13 @@
 //= require turbolinks
 //= require_tree .
 
+$(function() {
+    $('#dropdownMenu1').click(function() {
+	$.ajax({
+	    type: "POST",
+	    url: "/notifications/mark_as_read",
+	    dataType: "JSON",
+	    success: $("[data-behavior='unread-count']").text(0)
+	});
+    });
+});
