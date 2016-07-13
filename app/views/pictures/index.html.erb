@@ -4,33 +4,10 @@
   </div>
 </div> <!-- row -->
 
-<!--<p id="notice"><%= notice %></p>
-
-<h1>Listing Pictures</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.user_id %></td>
-        <td><%= picture.location %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Picture', new_user_picture_path %>
--->
+<div class="row">
+  <% @pictures.each do |picture| %>
+    <div class="col-sm-2">
+      <img src="<%= picture.location %>" class="img-responsive picture-thumb">
+    </div>
+  <% end %>
+</div>

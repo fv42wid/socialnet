@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713140219) do
+ActiveRecord::Schema.define(version: 20160713183321) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(version: 20160713140219) do
   end
 
   add_index "posts", ["user_id"], name: "fk_rails_5b5ddfd518", using: :btree
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id",            limit: 4
+    t.integer  "profile_picture_id", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

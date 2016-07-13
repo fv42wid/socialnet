@@ -11,6 +11,6 @@ class Picture < ActiveRecord::Base
     f.write tempfile.read()
     f.close
 
-    update location: "#{folder}/#{filename}"
+    update location: "/uploads/users/#{self.user_id}/#{filename}"
   end
 end
