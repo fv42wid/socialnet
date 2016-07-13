@@ -27,6 +27,7 @@ body {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     height: 100px;
+    position: relative;
 }
 
 .top-body-div {
@@ -37,9 +38,12 @@ body {
 }
 
 .main-profile-img {
-    padding-top: 30px;
+    top: 30px;
     z-index: 20;
-    position: relative;
+    position: absolute;
+    height: 100px;
+    max-width: 100px;
+    overflow: visible;
 }
 
 .field_with_errors {
