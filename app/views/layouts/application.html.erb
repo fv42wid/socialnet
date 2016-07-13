@@ -111,7 +111,11 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8 main-header-div">
       <% if user_signed_in? %>
-        <%= image_tag "/uploads/users/#{current_user.id}/21.jpg", :class => 'main-profile-img' %>
+        <% if current_user.profile and current_user.profile.profile_picture_id? %>
+	  <%= image_tag @profile_picture.location, :class => 'main-profile-img' %>
+	<% else %>
+          <%= image_tag "http://placehold.it/100x100", :class => 'main-profile-img' %>
+	<% end %>
       <% else %>
         <%= image_tag 'http://placehold.it/100x100', :class => 'main-profile-img' %>
       <% end %>

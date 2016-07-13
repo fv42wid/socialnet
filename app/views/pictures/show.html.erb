@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @picture.user_id %>
-</p>
+<div class="row">
+  <div class="col-sm-12">
+    <% if current_user == @user %>
+      <%= form_for(@profile) do |f| %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+	<%= f.hidden_field :profile_picture_id, value: @picture.id %>
+        <button class="btn btn-default" type="submit">Make Profile Image</button>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @picture.location %>
-</p>
-
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <%= image_tag @picture.location %>
+  </div>
+</div>

@@ -7,7 +7,7 @@
 <div class="row">
   <% @pictures.each do |picture| %>
     <div class="col-sm-2">
-      <img src="<%= picture.location %>" class="img-responsive picture-thumb">
+      <a href="<%= user_picture_path(@user, picture) %>"><img src="<%= picture.location %>" class="img-responsive" ></a>
     </div>
   <% end %>
 </div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :events
   resources :friendships
+  resources :profiles
   get 'users/show'
 
   resources :posts do
