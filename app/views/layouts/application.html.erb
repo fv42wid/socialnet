@@ -110,7 +110,11 @@
   <div class="row main-header-row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8 main-header-div">
-      <%= image_tag 'http://placehold.it/100x100', :class => 'main-profile-img' %>
+      <% if user_signed_in? %>
+        <%= image_tag "/uploads/users/#{current_user.id}/1.jpg", :class => 'main-profile-img' %>
+      <% else %>
+        <%= image_tag 'http://placehold.it/100x100', :class => 'main-profile-img' %>
+      <% end %>
     </div> <!-- main-header-div -->
     <div class="col-sm-2"></div>
   </div> <!--main-header-row" -->
