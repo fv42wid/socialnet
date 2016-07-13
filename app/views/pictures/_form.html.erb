@@ -1,5 +1,14 @@
-<%= form_for(@picture) do |f| %>
-  <% if @picture.errors.any? %>
+<%= form_for [@user, @picture] do |f| %>
+  <div class="form-group">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="actions">
+    <button class="btn btn-default post-submit" type="submit">Add</button>
+  </div>
+
+
+<!--  <% if @picture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
@@ -22,4 +31,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+-->
 <% end %>
