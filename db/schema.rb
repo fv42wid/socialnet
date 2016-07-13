@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705003301) do
+ActiveRecord::Schema.define(version: 20160713140219) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20160705003301) do
     t.string   "notifiable_type", limit: 255
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "location",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "posts", force: :cascade do |t|
