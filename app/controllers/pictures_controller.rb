@@ -35,6 +35,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
+        current_user.events.create(action: "added", eventable: @picture)
         format.html { redirect_to user_pictures_path(@user), notice: 'Picture was successfully created.' }
         format.json { render :show, status: :created, location: @picture }
       else
