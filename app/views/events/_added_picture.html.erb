@@ -1,0 +1,11 @@
+<li class="media">
+  <div class="media-left">
+    <%=image_tag 'http://placehold.it/50x50', :class => "media-object" %>
+  </div>
+  <div class="media-body">
+    <p class="text-muted post-time-ago">
+      <small><%= time_ago_in_words(event.updated_at) %> ago</small>
+    </p>
+    <%= image_tag event.eventable.location, :class => 'img-responsive' %>
+  </div>
+</li>
