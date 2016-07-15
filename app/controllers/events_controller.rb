@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if user_signed_in?
-      @events = Event.where(user: current_user.friends)
+      @events = Event.where(user: current_user.friends).reverse.first(5)
       @post = Post.new
     end
     
