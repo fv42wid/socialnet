@@ -6,10 +6,13 @@
   </div>
 </div> <!-- row -->
 
-<div class="row">
-  <% @pictures.each do |picture| %>
-    <div class="col-sm-2">
-      <a href="<%= user_picture_path(@user, picture) %>"><img src="<%= picture.location %>" class="img-responsive" ></a>
-    </div>
-  <% end %>
-</div>
+<% @pictures.in_groups_of(6, false) do |pictures| %>
+  <div class="row">
+    <% pictures.each do |picture| %>
+      <div class="col-sm-2">
+	<a href="<%= user_picture_path(@user, picture) %>"><img src="<%= picture.location %>" class="img-responsive" ></a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
