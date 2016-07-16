@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /albums
   # GET /albums.json
@@ -70,5 +71,9 @@ class AlbumsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
       params.require(:album).permit(:user_id, :title, :description)
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 end

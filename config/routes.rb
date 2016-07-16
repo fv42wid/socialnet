@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :albums
+  
   resources :events
   resources :friendships
   resources :profiles
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show] do
     resources :pictures
+    resources :albums
   end
   
   resources :notifications do
