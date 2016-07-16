@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713183321) do
+ActiveRecord::Schema.define(version: 20160716153225) do
+
+  create_table "albums", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
