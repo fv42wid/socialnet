@@ -1,12 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-sm-12">
-    <% if current_user == @user %>
+  <% if current_user == @user %>
+    <div class="col-sm-3">
       <%= form_for(@profile) do |f| %>
         <%= f.hidden_field :user_id, value: @user.id %>
 	<%= f.hidden_field :profile_picture_id, value: @picture.id %>
         <button class="btn btn-default" type="submit">Make Profile Image</button>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <%= form_for([@user, @picture], url: user_picture_path, :html => {:class => 'form-inline'}) do |p| %>
+        <div class="form-group">
+	  <button class="btn btn-default" type="submit">Add to Album</button>
+	  <%= p.select "album_id", @albums.collect {|a| [a.title, a.id]}, {}, {:class => "form-control"} %>
+	</div>
       <% end %>
     <% end %>
   </div>

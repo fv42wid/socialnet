@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :events
   has_many :pictures
+  has_many :albums
   has_one :profile
 
   def likes?(post)

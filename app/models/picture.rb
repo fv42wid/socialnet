@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
   belongs_to :user
+  belongs_to :album
 
   def save_file(tempfile)
     filename = "#{self.id.to_s}.jpg"

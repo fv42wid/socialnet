@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716153225) do
+ActiveRecord::Schema.define(version: 20160717191731) do
 
   create_table "albums", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160716153225) do
     t.string   "location",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "album_id",   limit: 4
   end
 
   create_table "posts", force: :cascade do |t|
