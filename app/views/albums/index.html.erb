@@ -1,30 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Albums</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.user_id %></td>
-        <td><%= album.title %></td>
-        <td><%= album.description %></td>
-
-
-
-      </tr>
+<%= @albums.in_groups_of(4, false) do |albums| %>
+  <div class="row">
+    <% albums.each do |album| %>
+      <div class="col-sm-3">
+	<%= link_to album.title, user_album_path(@user, album) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
 
 <br>
 
