@@ -1,9 +1,13 @@
 <div class="row">
   <div class="col-sm-12">
+    <div class="btn-group" role="group" aria-label="...">
     <% if user_signed_in? and current_user.id == @user.id %>
       <%= link_to 'Add Pictures', new_user_picture_path, :class => 'btn btn-default' %>
-    <% end %>
+      <% end %>
+      <%= link_to 'My Galleries', user_albums_path(@user), :class => 'btn btn-default' %>
+    </div>
   </div>
+
 </div> <!-- row -->
 
 <% @pictures.in_groups_of(6, false) do |pictures| %>
