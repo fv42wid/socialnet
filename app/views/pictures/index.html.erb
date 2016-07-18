@@ -7,7 +7,7 @@
 </div> <!-- row -->
 
 <% @pictures.in_groups_of(6, false) do |pictures| %>
-  <div class="row">
+  <div class="row image-thumb-row">
     <% pictures.each do |picture| %>
       <div class="col-sm-2">
 	<a href="<%= user_picture_path(@user, picture) %>"><img src="<%= picture.location %>" class="img-responsive" ></a>

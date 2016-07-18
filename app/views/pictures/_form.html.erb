@@ -1,7 +1,15 @@
-<%= form_for [@user, @picture] do |f| %>
+<%= form_for([@user, @picture], :html => {:class => "form-horizontal"}) do |f| %>
   <div class="form-group">
-    <%= f.label :picture %>
-    <%= f.file_field :location %>
+    <%= f.label :album_id, "Add to Album", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-4">
+      <%= f.select "album_id", @albums.collect { |a| [a.title, a.id] }, {include_blank: true}, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture, :class => "col-sm-3 control-label" %>
+    <div class="col-sm-4">
+      <%= f.file_field :location, :class => "form-control" %>
+    </div>
   </div>
   <div class="actions">
     <button class="btn btn-default post-submit" type="submit">Add</button>

@@ -21,6 +21,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    @albums = @user.albums
   end
 
   # GET /pictures/1/edit
@@ -34,6 +35,7 @@ class PicturesController < ApplicationController
     @picture.user_id = @user.id
     @picture.save
     @picture.save_file(params[:picture][:location])
+    @picture.album_id = params[:picture][:album_id]
 
     respond_to do |format|
       if @picture.save
