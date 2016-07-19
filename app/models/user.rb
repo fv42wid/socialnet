@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :albums
   has_one :profile
 
-  def likes?(post)
+  def likes_post?(post)
     post.likes.where(user_id: id).any?
   end
 

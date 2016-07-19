@@ -1,4 +1,4 @@
-<% if user_signed_in?  && current_user.likes?(post) %>
+<% if user_signed_in?  && current_user.likes_post?(post) %>
   <%= link_to "Unlike", post_like_path(post), method: :delete, remote: true %>
   <%= link_to "Share", share_post_path(post), method: :post %>
 <% else %>
