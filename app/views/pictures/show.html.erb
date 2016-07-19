@@ -23,5 +23,9 @@
 <div class="row image-thumb-row">
   <div class="col-sm-12 text-center">
     <%= image_tag @picture.location, :class => 'img-responsive' %>
+  
+  <div id="picture_<%= @picture.id %>_likes" class="text-left picture-likes">
+    <%= render partial: 'pictures/likes', locals: {picture: @picture} %>
+  </div>
   </div>
 </div>

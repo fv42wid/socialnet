@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <%= link_to "Unlike", "#" %>
+  <%= link_to "Share", "#" %>
+<% else %>
+  <%= link_to "Like", "#" %>
+  <%= link_to "Share", "#" %>
+<% end %>
