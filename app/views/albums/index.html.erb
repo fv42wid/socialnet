@@ -6,9 +6,9 @@
     <% albums.each do |album| %>
       <div class="col-sm-3">
 	<div class="thumbnail">
-	  <%= album_thumbnail(album) %>
+	  <%= link_to album_thumbnail(album), user_album_path(@user, album) %>
 	  <div class="caption text-center">
-	    <h3><%= album.title %></h3>
+	    <h3><%= link_to album.title, user_album_path(@user, album) %></h3>
 	    <p><%= album.description %></p>
 	  </div> <!-- caption -->
 	</div> <!-- thumbnail -->
