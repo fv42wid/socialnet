@@ -6,7 +6,7 @@
     <% albums.each do |album| %>
       <div class="col-sm-3">
 	<div class="thumbnail">
-	  <%= image_tag 'http://placehold.it/150x100' %>
+	  <%= album_thumbnail(album) %>
 	  <div class="caption text-center">
 	    <h3><%= album.title %></h3>
 	    <p><%= album.description %></p>
