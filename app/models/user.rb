@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     post.likes.where(user_id: id).any?
   end
 
+  def likes_picture?(picture)
+    picture.likes.where(user_id: id).any?
+  end
+
   def friends
     User.where(id: self.friendships.select("friend_id"))
   end
