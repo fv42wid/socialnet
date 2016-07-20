@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :friendships
   resources :profiles
   get 'users/show'
+  get 'users/friends'
 
   resources :posts do
     resource :like, module: :posts
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :users, :only => [:show] do
+  resources :users, :only => [:show, :friends] do
     resources :pictures do
       resource :like, module: :pictures
       member do

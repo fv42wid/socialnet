@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.atwho
 //= require_tree .
 
 $(function() {
@@ -24,4 +25,12 @@ $(function() {
 	    success: $("[data-behavior='unread-count']").text(0)
 	});
     });
+
+    // user mention lookup
+    data = ['tom','john'];
+    $('[data-behavior="user-mention-field"]').atwho({
+	at:"@", 
+	'data': "/users/friends.json"});
+
 });
+
