@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'jquery-atwho-rails', '~> 1.3.2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
