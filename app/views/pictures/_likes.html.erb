@@ -1,7 +1,7 @@
-<% if user_signed_in? %>
-  <%= link_to "Unlike", "#" %>
-  <%= link_to "Share", "#" %>
+<% if user_signed_in? && current_user.likes_picture?(picture) %>
+  <%= link_to "Unlike", user_picture_like_path(@user, picture), method: :delete, remote: true %>
+  <%= link_to "Share", share_user_picture_path(@user, picture), method: :post  %>
 <% else %>
-  <%= link_to "Like", "#" %>
-  <%= link_to "Share", "#" %>
+  <%= link_to "Like", user_picture_like_path(@user, picture), method: :post, remote: true %>
+  <%= link_to "Share", share_user_picture_path(@user, picture), method: :post %>
 <% end %>

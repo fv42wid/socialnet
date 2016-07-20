@@ -14,7 +14,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, :only => [:show] do
-    resources :pictures
+    resources :pictures do
+      resource :like, module: :pictures
+      member do
+        post :share
+      end
+    end
     resources :albums
   end
   
