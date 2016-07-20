@@ -7,8 +7,9 @@
         <%= f.hidden_field :user_id, value: @user.id %>
 	<%= f.hidden_field :profile_picture_id, value: @picture.id %>
         <button class="btn btn-default" type="submit">Make Profile Image</button>
-    </div>
       <% end %>
+    </div>
+      
     
     <div class="col-sm-6">
       <%= form_for([@user, @picture], url: user_picture_path, :html => {:class => 'form-inline'}) do |p| %>
