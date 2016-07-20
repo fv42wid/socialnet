@@ -28,6 +28,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.body = params[:body]
     @post.user_id = current_user.id
+    @post.mentions
+    @post.mentioned_users
+    @post.notify_mentioned_users
     respond_to do |format|
       if @post.save
         current_user.events.create(action: "posted", eventable: @post)
