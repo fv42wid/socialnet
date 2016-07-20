@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         current_user.events.create(action: "posted", eventable: @post)
-        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to events_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { redirect_to posts_path, flash: {errors: @post.errors} }
