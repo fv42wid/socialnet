@@ -1,4 +1,4 @@
-json.array!(@friends) do |user|
-  json.id user.id
-  json.email user.email
+json.array!(@friends) do |friend|
+  json.id friend.id
+  json.name friend.email
 end

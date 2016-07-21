@@ -27,10 +27,11 @@ $(function() {
     });
 
     // user mention lookup
-    data = ['tom','john'];
+    
     $('[data-behavior="user-mention-field"]').atwho({
-	at:"@", 
-	'data': "/users/friends.json"});
+	at: "@", 
+	data: "/users/friends.json"
+    });
 
 });
 
