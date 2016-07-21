@@ -23,9 +23,5 @@ class User < ActiveRecord::Base
   def friends
     User.where(id: self.friendships.select("friend_id"))
   end
-
-  def friends_list
-    @friends = User.where(id: self.friendships.select("friend_id"))
-  end
   
 end
