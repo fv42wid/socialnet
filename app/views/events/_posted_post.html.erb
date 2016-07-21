@@ -5,7 +5,7 @@
   <div class="media-body">
     <h5 class="post-name-heading"><%= event.user.email %></h5>
     <p class="text-muted post-time-ago"><small><%= time_ago_in_words(event.updated_at) %> ago</small></p>
-    <p><%= event.eventable.body %></p>
+    <p><%= linked_users(event.eventable.body) %></p>
     <div id="post_<%= event.eventable_id %>_likes">
       <%= render partial: 'posts/likes', locals: {post: event.eventable} %>
     </div>
