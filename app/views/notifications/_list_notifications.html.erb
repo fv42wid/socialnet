@@ -1,5 +1,4 @@
 <% @notifications.each do |notification| %>
   <%= render partial: "notifications/#{notification.action}_#{notification.notifiable_type.downcase}", locals: {notify: notification} %>
-<!--  <li><a href="#" class="dropdown-item"><%= notification.actor.email %> <%= notification.action %> a <%= notification.notifiable_type %> <%= form_for(notification.notifiable, :html => {:class => "form-inline notification-approval-form"}) do |f| %><%= f.hidden_field :approved, value: "TRUE" %><button type="submit" class="btn btn-success btn-xs">Accept</button><% end %><%= form_for(notification.notifiable, :html => {:class => "form-inline notification-approval-form"}) do |g| %><%= g.hidden_field :approved, value: "FALSE" %><button type="submit" class="btn btn-danger btn-xs">Deny</button><% end %></a></li>
--->
+
 <% end %> 
