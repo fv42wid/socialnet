@@ -36,6 +36,7 @@ class PicturesController < ApplicationController
     @picture.save
     @picture.save_file(params[:picture][:location])
     @picture.album_id = params[:picture][:album_id]
+    @picture.caption = params[:picture][:caption]
 
     respond_to do |format|
       if @picture.save
@@ -81,7 +82,7 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:user_id, :location, :album_id)
+      params.require(:picture).permit(:user_id, :location, :album_id, :caption)
     end
 
     def set_user
