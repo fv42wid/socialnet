@@ -15,4 +15,21 @@ class Picture < ActiveRecord::Base
 
     update location: "/uploads/users/#{self.user_id}/#{filename}"
   end
+
+  def mentions
+    @mentions ||= begin
+                    regex = /@([\w]+\@[\w]+\.[\w]+)/
+                    caption.scan(regex).flatten
+                  end
+  end
+
+  def mentioned_users
+    @mentioned_users ||= User.where(email: mentions)
+  end
+
+  def notify_mentioned_users
+    mentioned_users.each do |user|
+      Notification.create(recipient: user, actor_id: self.user_id, action: "tagged", notifiable: self)
+    end
+  end
 end

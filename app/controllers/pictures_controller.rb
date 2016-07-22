@@ -37,6 +37,9 @@ class PicturesController < ApplicationController
     @picture.save_file(params[:picture][:location])
     @picture.album_id = params[:picture][:album_id]
     @picture.caption = params[:picture][:caption]
+    @picture.mentions
+    @picture.mentioned_users
+    @picture.notify_mentioned_users
 
     respond_to do |format|
       if @picture.save
