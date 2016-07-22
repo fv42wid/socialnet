@@ -11,6 +11,12 @@
       <%= f.file_field :location, :class => "form-control" %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label :caption, :class => "col-sm-3 control-label" %>
+    <div class="col-sm-6">
+      <textarea name="picture[caption]" data-behavior="user-mention-field" class="form-control" rows="5"></textarea>
+    </div>
+  </div>
   <div class="actions">
     <button class="btn btn-default post-submit" type="submit">Add</button>
   </div>
