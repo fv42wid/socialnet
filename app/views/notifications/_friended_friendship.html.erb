@@ -1,3 +1,13 @@
 <li>
-  <a href"#" class="dropdown-item">Friendship</a>
+  <a href"#" class="dropdown-item">
+    <%= notify.actor.email %> sent you a friend request
+    <%= form_for(notify.notifiable, :html => {:class => "form-inline notification-approval-form"}) do |f| %>
+      <%= f.hidden_field :approved, value: "TRUE" %>
+      <button type="submit" class="btn btn-success btn-xs">Accept</button>
+    <% end %>
+    <%= form_for(notify.notifiable, :html => {:class => "form-inline notification-approval-form"}) do |g| %>
+      <%= g.hidden_field :approved, value: "FALSE" %>
+      <button type="submit" class="btn btn-danger btn-xs">Deny</button>
+    <% end %>
+  </a>
 </li>
