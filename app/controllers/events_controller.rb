@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     if user_signed_in?
       @events = Event.where(user: current_user.friends).reverse.first(5)
       @post = Post.new
+      @comment = Comment.new
     end
     
   end
