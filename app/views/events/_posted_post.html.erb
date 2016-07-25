@@ -8,6 +8,11 @@
     <p><%= linked_users(event.eventable.body) %></p>
     <div id="post_<%= event.eventable_id %>_likes">
       <%= render partial: 'posts/likes', locals: {post: event.eventable} %>
+      <div class="media-list">
+	<% event.eventable.comments.each do |comment| %>
+	  <%= render partial: 'comments/comments', locals: {comment: comment} %>
+	<% end %>
+      </div>
       <%= render partial: 'comments/form', locals: {post: event.eventable} %>
     </div>
   </div>
