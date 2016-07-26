@@ -1,8 +1,16 @@
-<div class="media">
-  <div class="media-left">
-    <%= image_tag 'http://placehold.it/30x30', :class => 'media-object' %>
-  </div>
-  <div class="media-body">
-    <p><%= comment.body %></p>
-  </div>
+<div class="media-list">
+  <% comments.each do |comment| %>
+    <div class="media comment-div">
+      <div class="media-left">
+	<%= image_tag 'http://placehold.it/30x30', :class => 'media-object' %>
+      </div>
+      <div class="media-body"
+	<h6 class="post-name-heading"><%= comment.user.email %></h6>
+	<p class="comment-body"><%= comment.body %></p>
+	<p class="text-muted post-time-ago">
+	  <small><%= time_ago_in_words(comment.updated_at) %> ago</small>
+	</p>
+      </div>
+    </div>
+  <% end %>
 </div>

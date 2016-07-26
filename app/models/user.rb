@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :pictures
   has_many :albums
+  has_many :comments
   has_one :profile
 
   def likes_post?(post)
