@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @comment = Comment.new
     if current_user.id == @user.id
       @profile = Profile.find_or_create_by(user_id: @user.id)
       @album = Album.new

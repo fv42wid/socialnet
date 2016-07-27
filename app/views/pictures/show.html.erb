@@ -29,6 +29,10 @@
   
   <div id="picture_<%= @picture.id %>_likes" class="text-left picture-likes">
     <%= render partial: 'pictures/likes', locals: {picture: @picture} %>
+    <div id="picture_<%= @picture.id %>_comments">
+      <%= render partial: 'comments/comments', locals: {comments: @picture.comments} %>
+    </div>
+    <%= render partial: 'comments/form', locals: {post: @picture} %>
   </div>
   </div>
 </div>

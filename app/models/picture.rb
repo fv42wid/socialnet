@@ -2,6 +2,7 @@ class Picture < ActiveRecord::Base
   belongs_to :user
   belongs_to :album
   has_many :likes, :as => :likable
+  has_many :comments, :as => :commentable
 
   def save_file(tempfile)
     filename = "#{self.id.to_s}.jpg"
