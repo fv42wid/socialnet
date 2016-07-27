@@ -32,7 +32,7 @@
     <div id="picture_<%= @picture.id %>_comments">
       <%= render partial: 'comments/comments', locals: {comments: @picture.comments} %>
     </div>
-    <%= render partial: 'comments/form', locals: {post: @picture} %>
+    <%= render partial: 'comments/form', locals: {commentable: @picture} %>
   </div>
   </div>
 </div>

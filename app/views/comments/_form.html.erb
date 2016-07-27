@@ -1,7 +1,7 @@
 <%= form_for(@comment, remote:true, :html => {:class => "form-inline"}) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :commentable_id, value: post.id %>
-  <%= f.hidden_field :commentable_type, value: post.class.to_s %>
+  <%= f.hidden_field :commentable_id, value: commentable.id %>
+  <%= f.hidden_field :commentable_type, value: commentable.class.to_s %>
   <div class="input-group">
     <%= f.text_field :body, :class => "form-control" %>
     <span class="input-group-btn">
