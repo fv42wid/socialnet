@@ -69,7 +69,7 @@ class PostsController < ApplicationController
 
   def share 
     current_user.events.create(action: "shared", eventable: @post)
-    redirect_to posts_path
+    redirect_to events_path
   end
 
   private
