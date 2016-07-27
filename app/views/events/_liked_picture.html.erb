@@ -9,5 +9,9 @@
       <small><%= time_ago_in_words(event.eventable.updated_at) %></small>
     </p>
     <%= image_tag event.eventable.location, :class => 'img-responsive' %>
+    <div id="picture_<%= event.eventable_id %>_likes" class="text-left picture_likes">
+      <%= render partial: 'pictures/likes', locals: {picture: event.eventable} %>
+    </div>
+    
   </div>
 </li>
