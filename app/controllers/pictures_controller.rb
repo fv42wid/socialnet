@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy, :share]
   before_action :set_user
 
   # GET /pictures
@@ -76,6 +76,11 @@ class PicturesController < ApplicationController
       format.html { redirect_to pictures_url, notice: 'Picture was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def share
+    current_user.events.create(action: "shared", eventable: @picture)
+    redirect_to events_path
   end
 
   private
