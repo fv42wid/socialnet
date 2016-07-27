@@ -9,6 +9,10 @@
     <p><%= event.eventable.body %></p>
     <div id="post_<%= event.eventable_id %>_likes">
       <%= render partial: 'posts/likes', locals: {post: event.eventable} %>
+      <div id="post_<%= event.eventable_id %>_comments">
+	<%= render partial: 'comments/comments', locals: {comments: event.eventable.comments} %>
+      </div>
+      <%= render partial: 'comments/form', locals: {commentable: event.eventable} %>
     </div>
   </div>
 </li>
